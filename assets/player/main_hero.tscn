@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bgw3hfxfdpg8o" path="res://res/Main Characters/Virtual Guy/Run (32x32).png" id="2_jmu5w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pncmi"]
+radius = 6.52174
+height = 19.5652
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpim0"]
 atlas = ExtResource("1_4m4od")
@@ -187,6 +189,8 @@ script = ExtResource("1_jmu5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 5)
+scale = Vector2(1, 0.92)
 shape = SubResource("CapsuleShape2D_pncmi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
