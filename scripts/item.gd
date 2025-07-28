@@ -24,7 +24,7 @@ func on_pickup(body):
 	tween_two.tween_property($AnimatedSprite2D, "self_modulate:a", 0.0, 0.7)
 	
 	#GlobalVars.score += 1
-	$TakeSound.play()
+#	$TakeSound.play()
 
 	#if (GlobalVars.score > GlobalVars.hi_score):
 	#	GlobalVars.hi_score = GlobalVars.score
@@ -36,6 +36,7 @@ func on_pickup(body):
 		type_enum.ITEM_FRUIT:
 			pass
 		type_enum.ITEM_KEY:
+			print_debug("HELLO")
 			body.has_key = true
 			print_debug(body.has_key)
 		type_enum.ITEM_BONUS:

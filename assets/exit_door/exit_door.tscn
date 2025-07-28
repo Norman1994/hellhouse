@@ -6,35 +6,47 @@
 [ext_resource type="AudioStream" uid="uid://c4k6dew4ii3ip" path="res://sounds/dooropen1.mp3" id="4_qtd1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l5gw"]
-size = Vector2(22, 32)
+size = Vector2(22, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcau0"]
 size = Vector2(46, 60)
 
 [node name="ExitDoor" type="Node2D"]
 script = ExtResource("1_4l5gw")
+next_scene = "res://levels/main_menu.tscn"
+need_key = true
 
 [node name="CloseDoor" type="Sprite2D" parent="."]
 scale = Vector2(0.082, 0.082)
 texture = ExtResource("1_wcau0")
+metadata/_edit_lock_ = true
 
 [node name="OpenDoor" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-2.496, -0.501999)
 scale = Vector2(0.0800625, 0.0683516)
 texture = ExtResource("2_ocmsr")
+metadata/_edit_lock_ = true
 
 [node name="ToNextLevel" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToNextLevel"]
-position = Vector2(0, -1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_4l5gw")
 
 [node name="AnimationArea" type="Area2D" parent="."]
+scale = Vector2(1.24, 1.2)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationArea"]
 position = Vector2(-1, 10)
+scale = Vector2(3.80645, 1.76667)
 shape = SubResource("RectangleShape2D_wcau0")
 
 [node name="DoorSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qtd1p")
+
+[connection signal="body_entered" from="ToNextLevel" to="." method="_on_to_next_level_body_entered"]
+[connection signal="body_entered" from="AnimationArea" to="." method="_on_animation_area_body_entered"]
+[connection signal="body_exited" from="AnimationArea" to="." method="_on_animation_area_body_exited"]

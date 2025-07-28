@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HellHouse"
-run/main_scene="uid://dx2u8ku51wkar"
+run/main_scene="uid://44qahef3w470"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

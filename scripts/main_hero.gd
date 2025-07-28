@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+var has_key : bool = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D;
@@ -39,3 +40,8 @@ func update_animation()-> void:
 		anim.play("Run")
 	else:
 		anim.play("Idle")
+
+
+func _on_pickup_area_area_entered(area: Area2D) -> void:
+	if area.has_method("on_pickup"):
+		area.on_pickup(self)
