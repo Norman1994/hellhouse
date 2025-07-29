@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+@onready var step_sound: AudioStreamPlayer2D = $StepSound
+var step_timer := 0.0
+const STEP_INTERVAL := 0.4  # шаг каждые 0.4 сек при движении
 var has_key : bool = false
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -26,6 +29,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = vertical_direction * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+		
+	if velocity.length() > 10:
+		if not step_sound.playing:
+			step_sound.play()
+	else:
+		if step_sound.playing:
+			step_sound.stop()
 		
 	update_animation()
 	move_and_slide()

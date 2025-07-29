@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddpvwann7d5c7"]
+[gd_scene load_steps=6 format=3 uid="uid://ddpvwann7d5c7"]
 
 [ext_resource type="Script" uid="uid://6nmub2myl18n" path="res://scripts/item.gd" id="1_perwk"]
 [ext_resource type="Texture2D" uid="uid://b1baetkk63yg" path="res://res/Keys/Things/11a.png" id="1_vt57k"]
-[ext_resource type="AudioStream" uid="uid://cth362jreq5xi" path="res://sounds/blop0.mp3" id="2_perwk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m3alu"]
 
@@ -31,6 +30,3 @@ shape = SubResource("CircleShape2D_m3alu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6lkyx")
 frame_progress = 0.999524
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_perwk")

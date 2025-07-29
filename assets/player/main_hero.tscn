@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://dpu6jxh3hufjg"]
+[gd_scene load_steps=31 format=3 uid="uid://dpu6jxh3hufjg"]
 
 [ext_resource type="Texture2D" uid="uid://cl5ejr7072pdr" path="res://res/Main Characters/Virtual Guy/Idle (32x32).png" id="1_4m4od"]
 [ext_resource type="Script" uid="uid://biex2s5c2wtgx" path="res://scripts/main_hero.gd" id="1_jmu5w"]
 [ext_resource type="Texture2D" uid="uid://bgw3hfxfdpg8o" path="res://res/Main Characters/Virtual Guy/Run (32x32).png" id="2_jmu5w"]
+[ext_resource type="AudioStream" uid="uid://c0a7khpi2bykl" path="res://sounds/footsteps.mp3" id="4_pncmi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pncmi"]
 radius = 6.52174
@@ -186,7 +187,7 @@ animations = [{
 radius = 19.0263
 
 [node name="MainHero" type="CharacterBody2D"]
-collision_mask = 16
+collision_mask = 80
 script = ExtResource("1_jmu5w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -207,5 +208,9 @@ zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource("CircleShape2D_jmu5w")
+
+[node name="StepSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pncmi")
+pitch_scale = 2.44
 
 [connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_area_entered"]

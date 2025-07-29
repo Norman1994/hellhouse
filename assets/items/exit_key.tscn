@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyd13kybmuc18"]
+[gd_scene load_steps=6 format=3 uid="uid://dyd13kybmuc18"]
 
 [ext_resource type="Script" uid="uid://6nmub2myl18n" path="res://scripts/item.gd" id="1_wurft"]
 [ext_resource type="Texture2D" uid="uid://j8qrhyrtuc8n" path="res://res/Keys/2px/11b.png" id="2_nlvpj"]
+[ext_resource type="AudioStream" uid="uid://45i6ie30asx7" path="res://sounds/keysound.ogg" id="3_nlvpj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jymlf"]
 
@@ -25,3 +26,6 @@ shape = SubResource("CircleShape2D_jymlf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5pb50")
+
+[node name="KeySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nlvpj")

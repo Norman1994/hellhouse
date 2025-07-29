@@ -17,9 +17,12 @@ func on_pickup(body):
 		return
 		
 	isTaken = true
+	if type_enum.ITEM_KEY:
+		$KeySound.play()
 	
 	var tween_one = get_tree().create_tween()
 	var tween_two = get_tree().create_tween()
+	
 	tween_one.tween_property($".", "position:y", position.y - 20, 0.7)
 	tween_two.tween_property($AnimatedSprite2D, "self_modulate:a", 0.0, 0.7)
 	
@@ -36,9 +39,8 @@ func on_pickup(body):
 		type_enum.ITEM_FRUIT:
 			pass
 		type_enum.ITEM_KEY:
-			print_debug("HELLO")
+			
 			body.has_key = true
-			print_debug(body.has_key)
 		type_enum.ITEM_BONUS:
 			pass
 		type_enum.ITEM_JUMP:
