@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dx2u8ku51wkar"]
+[gd_scene load_steps=14 format=3 uid="uid://dx2u8ku51wkar"]
 
 [ext_resource type="Texture2D" uid="uid://d1hjjtkqi3yjg" path="res://res/Terrain/Tilesheet/tilesheet_complete.png" id="1_wbho8"]
 [ext_resource type="PackedScene" uid="uid://r1mx54dnhplj" path="res://assets/exit_door/exit_door.tscn" id="3_62mp4"]
 [ext_resource type="PackedScene" uid="uid://dpu6jxh3hufjg" path="res://assets/player/main_hero.tscn" id="3_hmcaf"]
 [ext_resource type="PackedScene" uid="uid://dyd13kybmuc18" path="res://assets/items/exit_key.tscn" id="4_hmcaf"]
 [ext_resource type="Texture2D" uid="uid://b2sechc5bpmdj" path="res://res/Terrain/Tilesheet/RPGpack_sheet.png" id="5_62mp4"]
+[ext_resource type="PackedScene" uid="uid://dy8od11blytd7" path="res://levels/pause_menu.tscn" id="6_dfenr"]
+[ext_resource type="AudioStream" uid="uid://b25pu02r8q3vh" path="res://sounds/drops.mp3" id="7_4lecl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85io5"]
 texture = ExtResource("1_wbho8")
@@ -18267,3 +18269,12 @@ layer_0/tile_data = PackedInt32Array(2228240, 2424832, 45, 2293776, 2424832, 46,
 [node name="MainHero" parent="." instance=ExtResource("3_hmcaf")]
 position = Vector2(187, 613)
 scale = Vector2(1.00226, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_dfenr")]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4lecl")
+autoplay = true

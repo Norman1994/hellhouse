@@ -20,7 +20,6 @@ func _on_animation_area_body_exited(body: Node2D) -> void:
 	$OpenDoor.hide()
 
 func _on_to_next_level_body_entered(body: Node2D) -> void:
-	print_debug("ХУУУУУУУУУУУУУУЙ")
 	if body.name != "MainHero":
 		return
 	if need_key: 
