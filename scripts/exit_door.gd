@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 #			
 func change_scene():
-	get_tree().change_scene_to_file("res://levels/main_menu.tscn")
+	get_tree().change_scene_to_file("res://levels/second_floor.tscn")
 
 func _on_animation_area_body_exited(body: Node2D) -> void:
 	if body.name != "MainHero":
