@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://44qahef3w470"]
+[gd_scene load_steps=3 format=3 uid="uid://44qahef3w470"]
 
 [ext_resource type="Script" uid="uid://5x2ph3w00xbb" path="res://scripts/start_button.gd" id="1_0ettg"]
+[ext_resource type="Script" uid="uid://l003x883tyyt" path="res://scripts/main_menu.gd" id="1_duh7t"]
 
 [node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_duh7t")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
@@ -33,5 +35,5 @@ text = "Загрузить игру"
 layout_mode = 2
 text = "Выход"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="MarginContainer/VBoxContainer/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="MarginContainer/VBoxContainer/StartButton" method="_on_exit_button_pressed"]
